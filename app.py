@@ -55,7 +55,7 @@ def ask_gemini(question):
       response = model.generate_content(prompt)
       return response.text
 
-@line_handler.add(MessageEvent, message=TextMessageContent)
+@handler.add(MessageEvent, message=TextMessageContent)
 def handle_message(event):
     with ApiClient(configuration) as api_client:
         line_bot_api = MessagingApi(api_client)
